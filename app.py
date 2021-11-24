@@ -104,7 +104,7 @@ def save_file(name, content):
     mang = np.array(image)
     img = detect_image(mang)
     mang1 = np.array(img)
-    imsave(r'static\\'+name,mang1)    
+    imsave(name,mang1)    
 @dash_app.callback(
     Output('output-image-upload','src'),
     [Input("upload-image", "filename"),
@@ -133,7 +133,7 @@ def process_image_upload(filename,contents):
     pred = np.argmax(model.predict(img1))
     kq = index_word[pred]
     save_file(filename,contents)
-    image = "static\\" + filename
+    image =filename
     encoded = base64.b64encode(open(image, 'rb').read())
     encoded1 = 'data:image/png;base64,{}'.format(encoded.decode())
     return encoded1,kq
