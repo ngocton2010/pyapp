@@ -5,3 +5,4 @@ numpy
 pybase64
 opencv-python
 Pillow
+dash-bootstrap-components
