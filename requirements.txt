@@ -6,5 +6,4 @@ pybase64
 Pillow
 dash-bootstrap-components
 opencv-python-headless
-opencv-python
-skia-python
+scikit-image
