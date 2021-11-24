@@ -11,6 +11,8 @@ import cv2
 import tensorflow as tf
 import numpy as np
 
+from skimage.io import imsave
+
 model = tf.keras.models.load_model('model/model.h5')
 FA = "https://use.fontawesome.com/releases/v5.15.2/css/all.css"
 dash_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP,FA])
@@ -101,7 +103,8 @@ def save_file(name, content):
     image = stringToImage(data)
     mang = np.array(image)
     img = detect_image(mang)
-    cv2.imwrite(r'static\\'+name,img)
+    mang1 = np.array(img)
+    imsave(r'static\\'+name,mang1)    
 @dash_app.callback(
     Output('output-image-upload','src'),
     [Input("upload-image", "filename"),
