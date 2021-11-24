@@ -7,3 +7,4 @@ opencv-python
 Pillow
 dash-bootstrap-components
 opencv-python-headless
+libgl1-mesa-glx
