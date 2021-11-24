@@ -5,5 +5,5 @@ numpy
 pybase64
 Pillow
 dash-bootstrap-components
-opencv-python-headless
 scikit-image
+opencv-python-headless
